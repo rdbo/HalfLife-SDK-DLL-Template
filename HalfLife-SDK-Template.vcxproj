@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{17F0F407-B1DC-4882-BB7A-C1B7F7C40723}</ProjectGuid>
+    <RootNamespace>HalfLifeSDKTemplate</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)build\$(Platform)\$(Configuration)</OutDir>
+    <IntDir>$(ProjectDir)build\$(Platform)\$(Configuration)\bin</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)build\$(Platform)\$(Configuration)</OutDir>
+    <IntDir>$(ProjectDir)build\$(Platform)\$(Configuration)\bin</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(ProjectDir)build\$(Platform)\$(Configuration)</OutDir>
+    <IntDir>$(ProjectDir)build\$(Platform)\$(Configuration)\bin</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(ProjectDir)build\$(Platform)\$(Configuration)</OutDir>
+    <IntDir>$(ProjectDir)build\$(Platform)\$(Configuration)\bin</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)src;$(ProjectDir)include\halflife\;$(ProjectDir)include\halflife\cl_dll;$(ProjectDir)include\halflife\dlls;$(ProjectDir)include\halflife\engine;$(ProjectDir)include\halflife\game_shared;$(ProjectDir)include\halflife\pm_shared;$(ProjectDir)include\halflife\public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)src;$(ProjectDir)include\halflife\;$(ProjectDir)include\halflife\cl_dll;$(ProjectDir)include\halflife\dlls;$(ProjectDir)include\halflife\engine;$(ProjectDir)include\halflife\game_shared;$(ProjectDir)include\halflife\pm_shared;$(ProjectDir)include\halflife\public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)src;$(ProjectDir)include\halflife\;$(ProjectDir)include\halflife\cl_dll;$(ProjectDir)include\halflife\dlls;$(ProjectDir)include\halflife\engine;$(ProjectDir)include\halflife\game_shared;$(ProjectDir)include\halflife\pm_shared;$(ProjectDir)include\halflife\public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)src;$(ProjectDir)include\halflife\;$(ProjectDir)include\halflife\cl_dll;$(ProjectDir)include\halflife\dlls;$(ProjectDir)include\halflife\engine;$(ProjectDir)include\halflife\game_shared;$(ProjectDir)include\halflife\pm_shared;$(ProjectDir)include\halflife\public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\halflife\cl_dll\ammo.h" />
+    <ClInclude Include="include\halflife\cl_dll\ammohistory.h" />
+    <ClInclude Include="include\halflife\cl_dll\bench.h" />
+    <ClInclude Include="include\halflife\cl_dll\camera.h" />
+    <ClInclude Include="include\halflife\cl_dll\cl_dll.h" />
+    <ClInclude Include="include\halflife\cl_dll\cl_util.h" />
+    <ClInclude Include="include\halflife\cl_dll\com_weapons.h" />
+    <ClInclude Include="include\halflife\cl_dll\demo.h" />
+    <ClInclude Include="include\halflife\cl_dll\eventscripts.h" />
+    <ClInclude Include="include\halflife\cl_dll\ev_hldm.h" />
+    <ClInclude Include="include\halflife\cl_dll\Exports.h" />
+    <ClInclude Include="include\halflife\cl_dll\GameStudioModelRenderer.h" />
+    <ClInclude Include="include\halflife\cl_dll\GameStudioModelRenderer_Sample.h" />
+    <ClInclude Include="include\halflife\cl_dll\global_consts.h" />
+    <ClInclude Include="include\halflife\cl_dll\health.h" />
+    <ClInclude Include="include\halflife\cl_dll\hud.h" />
+    <ClInclude Include="include\halflife\cl_dll\hud_benchtrace.h" />
+    <ClInclude Include="include\halflife\cl_dll\hud_iface.h" />
+    <ClInclude Include="include\halflife\cl_dll\hud_servers.h" />
+    <ClInclude Include="include\halflife\cl_dll\hud_servers_priv.h" />
+    <ClInclude Include="include\halflife\cl_dll\hud_spectator.h" />
+    <ClInclude Include="include\halflife\cl_dll\interpolation.h" />
+    <ClInclude Include="include\halflife\cl_dll\in_defs.h" />
+    <ClInclude Include="include\halflife\cl_dll\kbutton.h" />
+    <ClInclude Include="include\halflife\cl_dll\overview.h" />
+    <ClInclude Include="include\halflife\cl_dll\player_info.h" />
+    <ClInclude Include="include\halflife\cl_dll\StudioModelRenderer.h" />
+    <ClInclude Include="include\halflife\cl_dll\studio_util.h" />
+    <ClInclude Include="include\halflife\cl_dll\tf_defs.h" />
+    <ClInclude Include="include\halflife\cl_dll\tri.h" />
+    <ClInclude Include="include\halflife\cl_dll\util_vector.h" />
+    <ClInclude Include="include\halflife\cl_dll\vgui_ConsolePanel.h" />
+    <ClInclude Include="include\halflife\cl_dll\vgui_ControlConfigPanel.h" />
+    <ClInclude Include="include\halflife\cl_dll\vgui_int.h" />
+    <ClInclude Include="include\halflife\cl_dll\vgui_SchemeManager.h" />
+    <ClInclude Include="include\halflife\cl_dll\vgui_ScorePanel.h" />
+    <ClInclude Include="include\halflife\cl_dll\vgui_ServerBrowser.h" />
+    <ClInclude Include="include\halflife\cl_dll\vgui_SpectatorPanel.h" />
+    <ClInclude Include="include\halflife\cl_dll\vgui_TeamFortressViewport.h" />
+    <ClInclude Include="include\halflife\cl_dll\view.h" />
+    <ClInclude Include="include\halflife\cl_dll\voice_status.h" />
+    <ClInclude Include="include\halflife\cl_dll\wrect.h" />
+    <ClInclude Include="include\halflife\common\beamdef.h" />
+    <ClInclude Include="include\halflife\common\cl_entity.h" />
+    <ClInclude Include="include\halflife\common\com_model.h" />
+    <ClInclude Include="include\halflife\common\const.h" />
+    <ClInclude Include="include\halflife\common\con_nprint.h" />
+    <ClInclude Include="include\halflife\common\crc.h" />
+    <ClInclude Include="include\halflife\common\cvardef.h" />
+    <ClInclude Include="include\halflife\common\demo_api.h" />
+    <ClInclude Include="include\halflife\common\director_cmds.h" />
+    <ClInclude Include="include\halflife\common\dlight.h" />
+    <ClInclude Include="include\halflife\common\dll_state.h" />
+    <ClInclude Include="include\halflife\common\entity_state.h" />
+    <ClInclude Include="include\halflife\common\entity_types.h" />
+    <ClInclude Include="include\halflife\common\enums.h" />
+    <ClInclude Include="include\halflife\common\event_api.h" />
+    <ClInclude Include="include\halflife\common\event_args.h" />
+    <ClInclude Include="include\halflife\common\event_flags.h" />
+    <ClInclude Include="include\halflife\common\hltv.h" />
+    <ClInclude Include="include\halflife\common\interface.h" />
+    <ClInclude Include="include\halflife\common\in_buttons.h" />
+    <ClInclude Include="include\halflife\common\ivoicetweak.h" />
+    <ClInclude Include="include\halflife\common\mathlib.h" />
+    <ClInclude Include="include\halflife\common\netadr.h" />
+    <ClInclude Include="include\halflife\common\net_api.h" />
+    <ClInclude Include="include\halflife\common\nowin.h" />
+    <ClInclude Include="include\halflife\common\parsemsg.h" />
+    <ClInclude Include="include\halflife\common\particledef.h" />
+    <ClInclude Include="include\halflife\common\pmtrace.h" />
+    <ClInclude Include="include\halflife\common\port.h" />
+    <ClInclude Include="include\halflife\common\qfont.h" />
+    <ClInclude Include="include\halflife\common\ref_params.h" />
+    <ClInclude Include="include\halflife\common\r_efx.h" />
+    <ClInclude Include="include\halflife\common\r_studioint.h" />
+    <ClInclude Include="include\halflife\common\screenfade.h" />
+    <ClInclude Include="include\halflife\common\Sequence.h" />
+    <ClInclude Include="include\halflife\common\studio_event.h" />
+    <ClInclude Include="include\halflife\common\triangleapi.h" />
+    <ClInclude Include="include\halflife\common\usercmd.h" />
+    <ClInclude Include="include\halflife\common\weaponinfo.h" />
+    <ClInclude Include="include\halflife\common\winsani_in.h" />
+    <ClInclude Include="include\halflife\common\winsani_out.h" />
+    <ClInclude Include="include\halflife\dlls\activity.h" />
+    <ClInclude Include="include\halflife\dlls\activitymap.h" />
+    <ClInclude Include="include\halflife\dlls\animation.h" />
+    <ClInclude Include="include\halflife\dlls\basemonster.h" />
+    <ClInclude Include="include\halflife\dlls\cbase.h" />
+    <ClInclude Include="include\halflife\dlls\cdll_dll.h" />
+    <ClInclude Include="include\halflife\dlls\client.h" />
+    <ClInclude Include="include\halflife\dlls\decals.h" />
+    <ClInclude Include="include\halflife\dlls\defaultai.h" />
+    <ClInclude Include="include\halflife\dlls\doors.h" />
+    <ClInclude Include="include\halflife\dlls\effects.h" />
+    <ClInclude Include="include\halflife\dlls\enginecallback.h" />
+    <ClInclude Include="include\halflife\dlls\explode.h" />
+    <ClInclude Include="include\halflife\dlls\extdll.h" />
+    <ClInclude Include="include\halflife\dlls\flyingmonster.h" />
+    <ClInclude Include="include\halflife\dlls\func_break.h" />
+    <ClInclude Include="include\halflife\dlls\game.h" />
+    <ClInclude Include="include\halflife\dlls\gamerules.h" />
+    <ClInclude Include="include\halflife\dlls\hornet.h" />
+    <ClInclude Include="include\halflife\dlls\items.h" />
+    <ClInclude Include="include\halflife\dlls\maprules.h" />
+    <ClInclude Include="include\halflife\dlls\monsterevent.h" />
+    <ClInclude Include="include\halflife\dlls\monsters.h" />
+    <ClInclude Include="include\halflife\dlls\nodes.h" />
+    <ClInclude Include="include\halflife\dlls\plane.h" />
+    <ClInclude Include="include\halflife\dlls\player.h" />
+    <ClInclude Include="include\halflife\dlls\saverestore.h" />
+    <ClInclude Include="include\halflife\dlls\schedule.h" />
+    <ClInclude Include="include\halflife\dlls\scripted.h" />
+    <ClInclude Include="include\halflife\dlls\scriptevent.h" />
+    <ClInclude Include="include\halflife\dlls\skill.h" />
+    <ClInclude Include="include\halflife\dlls\soundent.h" />
+    <ClInclude Include="include\halflife\dlls\spectator.h" />
+    <ClInclude Include="include\halflife\dlls\squad.h" />
+    <ClInclude Include="include\halflife\dlls\squadmonster.h" />
+    <ClInclude Include="include\halflife\dlls\talkmonster.h" />
+    <ClInclude Include="include\halflife\dlls\teamplay_gamerules.h" />
+    <ClInclude Include="include\halflife\dlls\trains.h" />
+    <ClInclude Include="include\halflife\dlls\util.h" />
+    <ClInclude Include="include\halflife\dlls\vector.h" />
+    <ClInclude Include="include\halflife\dlls\weapons.h" />
+    <ClInclude Include="include\halflife\dlls\wxdebug.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\ammo.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\ammohistory.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\camera.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\cl_dll.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\cl_util.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\com_model.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\com_weapons.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\demo.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\DMC_BSPFile.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\DMC_Teleporters.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\eventscripts.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\ev_hldm.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\Exports.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\GameStudioModelRenderer.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\health.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\hud.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\hud_iface.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\hud_servers.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\hud_servers_priv.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\hud_spectator.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\in_defs.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\kbutton.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\StudioModelRenderer.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\studio_util.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\util.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\util_vector.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\vgui_ControlConfigPanel.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\vgui_int.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\vgui_SchemeManager.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\vgui_ScorePanel.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\vgui_ServerBrowser.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\vgui_SpectatorPanel.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\vgui_viewport.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\view.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\voice_status.h" />
+    <ClInclude Include="include\halflife\dmc\cl_dll\wrect.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\activity.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\activitymap.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\animation.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\basemonster.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\cbase.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\cdll_dll.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\client.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\decals.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\defaultai.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\doors.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\effects.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\enginecallback.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\explode.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\extdll.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\func_break.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\game.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\gamerules.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\items.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\maprules.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\monsterevent.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\monsters.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\nodes.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\plane.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\player.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\quake_gun.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\saverestore.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\schedule.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\scripted.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\scriptevent.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\skill.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\soundent.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\spectator.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\teamplay_gamerules.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\threewave_gamerules.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\trains.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\util.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\vector.h" />
+    <ClInclude Include="include\halflife\dmc\dlls\weapons.h" />
+    <ClInclude Include="include\halflife\dmc\pm_shared\pm_debug.h" />
+    <ClInclude Include="include\halflife\dmc\pm_shared\pm_defs.h" />
+    <ClInclude Include="include\halflife\dmc\pm_shared\pm_info.h" />
+    <ClInclude Include="include\halflife\dmc\pm_shared\pm_materials.h" />
+    <ClInclude Include="include\halflife\dmc\pm_shared\pm_movevars.h" />
+    <ClInclude Include="include\halflife\dmc\pm_shared\pm_shared.h" />
+    <ClInclude Include="include\halflife\engine\anorms.h" />
+    <ClInclude Include="include\halflife\engine\APIProxy.h" />
+    <ClInclude Include="include\halflife\engine\cdll_int.h" />
+    <ClInclude Include="include\halflife\engine\custom.h" />
+    <ClInclude Include="include\halflife\engine\customentity.h" />
+    <ClInclude Include="include\halflife\engine\edict.h" />
+    <ClInclude Include="include\halflife\engine\eiface.h" />
+    <ClInclude Include="include\halflife\engine\progdefs.h" />
+    <ClInclude Include="include\halflife\engine\progs.h" />
+    <ClInclude Include="include\halflife\engine\shake.h" />
+    <ClInclude Include="include\halflife\engine\studio.h" />
+    <ClInclude Include="include\halflife\external\SDL2\begin_code.h" />
+    <ClInclude Include="include\halflife\external\SDL2\close_code.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_assert.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_atomic.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_audio.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_bits.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_blendmode.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_clipboard.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_config.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_config_android.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_config_iphoneos.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_config_macosx.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_config_minimal.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_config_nintendods.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_config_pandora.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_config_windows.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_config_wiz.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_copying.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_cpuinfo.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_endian.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_error.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_events.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_gamecontroller.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_gesture.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_haptic.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_hints.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_input.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_joystick.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_keyboard.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_keycode.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_loadso.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_log.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_main.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_messagebox.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_mouse.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_mutex.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_name.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_opengl.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_opengles.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_opengles2.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_pixels.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_platform.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_power.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_quit.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_rect.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_render.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_revision.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_rwops.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_scancode.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_shape.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_stdinc.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_surface.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_system.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_syswm.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_test.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_test_assert.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_test_common.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_test_compare.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_test_crc32.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_test_font.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_test_fuzzer.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_test_harness.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_test_images.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_test_log.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_test_md5.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_test_random.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_thread.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_timer.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_touch.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_types.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_version.h" />
+    <ClInclude Include="include\halflife\external\SDL2\SDL_video.h" />
+    <ClInclude Include="include\halflife\game_shared\bitvec.h" />
+    <ClInclude Include="include\halflife\game_shared\bot\bot.h" />
+    <ClInclude Include="include\halflife\game_shared\bot\bot_constants.h" />
+    <ClInclude Include="include\halflife\game_shared\bot\bot_manager.h" />
+    <ClInclude Include="include\halflife\game_shared\bot\bot_profile.h" />
+    <ClInclude Include="include\halflife\game_shared\bot\bot_util.h" />
+    <ClInclude Include="include\halflife\game_shared\bot\improv.h" />
+    <ClInclude Include="include\halflife\game_shared\bot\nav.h" />
+    <ClInclude Include="include\halflife\game_shared\bot\nav_area.h" />
+    <ClInclude Include="include\halflife\game_shared\bot\nav_node.h" />
+    <ClInclude Include="include\halflife\game_shared\bot\nav_path.h" />
+    <ClInclude Include="include\halflife\game_shared\bot\simple_state_machine.h" />
+    <ClInclude Include="include\halflife\game_shared\GameEvent.h" />
+    <ClInclude Include="include\halflife\game_shared\perf_counter.h" />
+    <ClInclude Include="include\halflife\game_shared\shared_util.h" />
+    <ClInclude Include="include\halflife\game_shared\simple_checksum.h" />
+    <ClInclude Include="include\halflife\game_shared\steam_util.h" />
+    <ClInclude Include="include\halflife\game_shared\vgui_checkbutton2.h" />
+    <ClInclude Include="include\halflife\game_shared\vgui_defaultinputsignal.h" />
+    <ClInclude Include="include\halflife\game_shared\vgui_grid.h" />
+    <ClInclude Include="include\halflife\game_shared\vgui_helpers.h" />
+    <ClInclude Include="include\halflife\game_shared\vgui_listbox.h" />
+    <ClInclude Include="include\halflife\game_shared\vgui_loadtga.h" />
+    <ClInclude Include="include\halflife\game_shared\vgui_scrollbar2.h" />
+    <ClInclude Include="include\halflife\game_shared\vgui_slider2.h" />
+    <ClInclude Include="include\halflife\game_shared\voice_banmgr.h" />
+    <ClInclude Include="include\halflife\game_shared\voice_common.h" />
+    <ClInclude Include="include\halflife\game_shared\voice_gamemgr.h" />
+    <ClInclude Include="include\halflife\game_shared\voice_status.h" />
+    <ClInclude Include="include\halflife\game_shared\voice_status_hud.h" />
+    <ClInclude Include="include\halflife\game_shared\voice_vgui_tweakdlg.h" />
+    <ClInclude Include="include\halflife\pm_shared\pm_debug.h" />
+    <ClInclude Include="include\halflife\pm_shared\pm_defs.h" />
+    <ClInclude Include="include\halflife\pm_shared\pm_info.h" />
+    <ClInclude Include="include\halflife\pm_shared\pm_materials.h" />
+    <ClInclude Include="include\halflife\pm_shared\pm_movevars.h" />
+    <ClInclude Include="include\halflife\pm_shared\pm_shared.h" />
+    <ClInclude Include="include\halflife\public\archtypes.h" />
+    <ClInclude Include="include\halflife\public\cl_dll\IGameClientExports.h" />
+    <ClInclude Include="include\halflife\public\FileSystem.h" />
+    <ClInclude Include="include\halflife\public\interface.h" />
+    <ClInclude Include="include\halflife\public\keydefs.h" />
+    <ClInclude Include="include\halflife\public\particleman.h" />
+    <ClInclude Include="include\halflife\public\pman_particlemem.h" />
+    <ClInclude Include="include\halflife\public\pman_triangleffect.h" />
+    <ClInclude Include="include\halflife\public\steam\steamtypes.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\ammo.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\ammohistory.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\camera.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\cl_dll.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\cl_util.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\com_weapons.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\demo.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\eventscripts.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\ev_hldm.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\Exports.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\GameStudioModelRenderer.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\health.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\hud.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\hud_iface.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\hud_servers.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\hud_servers_priv.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\in_defs.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\kbutton.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\Ricochet_BSPFile.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\Ricochet_JumpPads.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\StudioModelRenderer.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\studio_util.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\tf_defs.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\util_vector.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\vgui_ConsolePanel.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\vgui_ControlConfigPanel.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\vgui_discobjects.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\vgui_int.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\vgui_SchemeManager.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\vgui_ScorePanel.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\vgui_ServerBrowser.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\vgui_TeamFortressViewport.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\view.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\voice_status.h" />
+    <ClInclude Include="include\halflife\ricochet\cl_dll\wrect.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\activity.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\activitymap.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\animation.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\basemonster.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\cbase.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\cdll_dll.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\client.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\decals.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\discwar.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\disc_arena.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\disc_objects.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\disc_weapon.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\doors.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\effects.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\enginecallback.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\explode.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\extdll.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\func_break.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\game.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\gamerules.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\items.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\maprules.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\monsterevent.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\monsters.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\nodes.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\plane.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\player.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\saverestore.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\schedule.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\scriptevent.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\skill.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\soundent.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\spectator.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\talkmonster.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\teamplay_gamerules.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\trains.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\util.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\vector.h" />
+    <ClInclude Include="include\halflife\ricochet\dlls\weapons.h" />
+    <ClInclude Include="include\halflife\ricochet\pm_shared\pm_debug.h" />
+    <ClInclude Include="include\halflife\ricochet\pm_shared\pm_defs.h" />
+    <ClInclude Include="include\halflife\ricochet\pm_shared\pm_info.h" />
+    <ClInclude Include="include\halflife\ricochet\pm_shared\pm_materials.h" />
+    <ClInclude Include="include\halflife\ricochet\pm_shared\pm_movevars.h" />
+    <ClInclude Include="include\halflife\ricochet\pm_shared\pm_shared.h" />
+    <ClInclude Include="include\halflife\utils\common\bspfile.h" />
+    <ClInclude Include="include\halflife\utils\common\bsplib.h" />
+    <ClInclude Include="include\halflife\utils\common\cmdlib.h" />
+    <ClInclude Include="include\halflife\utils\common\l3dslib.h" />
+    <ClInclude Include="include\halflife\utils\common\lbmlib.h" />
+    <ClInclude Include="include\halflife\utils\common\mathlib.h" />
+    <ClInclude Include="include\halflife\utils\common\meter.h" />
+    <ClInclude Include="include\halflife\utils\common\movie.h" />
+    <ClInclude Include="include\halflife\utils\common\polylib.h" />
+    <ClInclude Include="include\halflife\utils\common\scriplib.h" />
+    <ClInclude Include="include\halflife\utils\common\threads.h" />
+    <ClInclude Include="include\halflife\utils\common\trilib.h" />
+    <ClInclude Include="include\halflife\utils\common\wadlib.h" />
+    <ClInclude Include="include\halflife\utils\light\light.h" />
+    <ClInclude Include="include\halflife\utils\light\new\light.h" />
+    <ClInclude Include="include\halflife\utils\mdlviewer\mdlviewer.h" />
+    <ClInclude Include="include\halflife\utils\procinfo\procinfo.h" />
+    <ClInclude Include="include\halflife\utils\qbsp2\bsp5.h" />
+    <ClInclude Include="include\halflife\utils\qcsg\csg.h" />
+    <ClInclude Include="include\halflife\utils\qlumpy\qlumpy.h" />
+    <ClInclude Include="include\halflife\utils\qrad\qrad.h" />
+    <ClInclude Include="include\halflife\utils\serverctrl\resource.h" />
+    <ClInclude Include="include\halflife\utils\serverctrl\ServerCtrl.h" />
+    <ClInclude Include="include\halflife\utils\serverctrl\ServerCtrlDlg.h" />
+    <ClInclude Include="include\halflife\utils\serverctrl\StdAfx.h" />
+    <ClInclude Include="include\halflife\utils\smdlexp\smedefs.h" />
+    <ClInclude Include="include\halflife\utils\smdlexp\smexprc.h" />
+    <ClInclude Include="include\halflife\utils\sprgen\spritegn.h" />
+    <ClInclude Include="include\halflife\utils\studiomdl\studiomdl.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_ActionSignal.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_App.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Bitmap.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_BitmapTGA.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Border.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_BorderLayout.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_BorderPair.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_BuildGroup.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Button.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_ButtonController.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_ButtonGroup.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_ChangeSignal.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_CheckButton.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Color.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_ComboKey.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_ConfigWizard.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Cursor.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Dar.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_DataInputStream.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Desktop.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_DesktopIcon.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_EditPanel.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_EtchedBorder.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_FileInputStream.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_FlowLayout.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_FocusChangeSignal.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_FocusNavGroup.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Font.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Frame.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_FrameSignal.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_GridLayout.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_HeaderPanel.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Image.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_ImagePanel.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_InputSignal.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_InputStream.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_IntChangeSignal.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_IntLabel.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_KeyCode.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Label.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Layout.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_LayoutInfo.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_LineBorder.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_ListPanel.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_LoweredBorder.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Menu.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_MenuItem.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_MenuSeparator.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_MessageBox.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_MiniApp.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_MouseCode.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Panel.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Point.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_PopupMenu.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_ProgressBar.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_RadioButton.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_RaisedBorder.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_RepaintSignal.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Scheme.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_ScrollBar.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_ScrollPanel.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Slider.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_StackLayout.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_String.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_Surface.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_SurfaceBase.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_SurfaceGL.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_TablePanel.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_TabPanel.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_TaskBar.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_TextEntry.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_TextGrid.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_TextImage.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_TextPanel.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_TickSignal.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_ToggleButton.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_TreeFolder.h" />
+    <ClInclude Include="include\halflife\utils\vgui\include\VGUI_WizardPanel.h" />
+    <ClInclude Include="include\halflife\utils\visx2\vis.h" />
+    <ClInclude Include="include\SDK.h" />
+    <ClInclude Include="src\pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
